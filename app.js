@@ -36,7 +36,10 @@ const { MongoStore } = require('connect-mongo');
 
  const dbUrl =  'mongodb://127.0.0.1:27017/food'
 
-mongoose.connect(dbUrl)
+mongoose.connect(dbUrl,{
+    useNewUrlParser:true,
+    useUnifiedTopology:true
+})
 .then(()=>{
     console.log("MONGO CONNECTION OPPEN !!!");
 })
